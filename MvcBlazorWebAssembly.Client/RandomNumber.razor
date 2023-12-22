@@ -1,0 +1,18 @@
+﻿<div>Random Number: <b>@RandomValue</b></div>
+<button @onclick="GenerateValue">Generate</button>
+
+@code {
+    private Random _rng = new Random();
+
+    public int RandomValue { get; set; } = 0;
+
+    protected override void OnInitialized()
+    {
+        GenerateValue();
+    }
+
+    public void GenerateValue()
+    {
+        RandomValue = _rng.Next(1, 100);
+    }
+}
